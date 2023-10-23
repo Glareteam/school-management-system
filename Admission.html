@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#address").hide();
+    $("#showAddress").click(function() {
+        $("#address").show();
+    });
+    $("#hideAddress").click(function() {
+        $("#address").hide();
+    });
+            $("form").submit(function(event) {
+                event.preventDefault(); 
+                var fullName = $("#fullname").val();
+                var gender = $("input[name='gender']:checked").val();
+                var birthdate = $("#birthdate").val();
+                var email = $("#email").val();
+                var religion = $("#religion").val();
+                var nationality = $("#nationality").val();
+                var address = $("#address").val();
+                alert("Form submitted:\n" +
+                    "Full Name: " + fullName + "\n" +
+                    "Gender: " + gender + "\n" +
+                    "Date of Birth: " + birthdate + "\n" +
+                    "Email: " + email + "\n" +
+                    "Religion: " + religion + "\n" +
+                    "Nationality: " + nationality + "\n" +
+                    "Address: " + address);
+                    window.location.href = "Academic.html";
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2 style="text-align: center;">Admission Form</h2>
+    <form>
+        <br><label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Your full name" required></br>
+       
+        <br><label for="gender" >Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label><br>
+
+        <br><label for="birthdate">Date of Birth:</label>
+        <input type="date" id="birthdate" name="birthdate" required></br>
+        <br><label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Your email address" required></br>
+
+
+        <br><label for="religion">Religion:</label>
+        <input type="text" id="religion" name="religion" placeholder="Your religion" required></br>
+
+       
+        <br><label for="nationality">Nationality:</label>
+        <input type="text" id="nationality" name="nationality" placeholder="Your nationality" required></br>
+        
+        <br><label for="address">Address:</label><br>
+        <textarea id="address" name="address" rows="4" cols="50" placeholder="Your address" required></textarea></br>
+        <br>
+        <button type="button" id="showAddress">Show Address</button>
+        <button type="button" id="hideAddress">Hide Address</button>
+        </br>
+        <br><button type="submit">submit</button></br>
+    </form>
+</body>
+</html>
